@@ -8,7 +8,9 @@
 
 Es un CRUD de una colección de libros que se conecta a la BD de postgres y usa JWT para la autenticación ejecución de los endpoints establecidos
 
+
 ### Endpoint: /libros
+
 Método: GET
 
 Descripción: Obtiene todos los libros disponibles.
@@ -18,7 +20,6 @@ Formato de respuesta: Un array de objetos Book.
 Códigos de Estado:
 
 200 OK: Se devuelve la lista de libros correctamente.
-
 401 Unauthorized: El usuario no está autenticado.
 
 Método: POST
@@ -41,7 +42,9 @@ Códigos de Estado:
 400 Bad Request: La solicitud está mal formada o faltan datos.
 401 Unauthorized: El usuario no está autenticado.
 
+
 ### Endpoint: /libros/:id
+
 Método: GET
 
 Descripción: Obtiene un libro específico por su ID.
@@ -74,6 +77,7 @@ Códigos de Estado:
 Método: DELETE
 
 Descripción: Elimina un libro existente por su ID.
+
 Parámetros de Ruta:
 id: El ID único del libro que se desea eliminar.
 
