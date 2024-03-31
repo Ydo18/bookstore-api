@@ -8,8 +8,8 @@ import { jwtConstants } from '../auth/constants';
 
 @Module({
     imports: [
-        TypeOrmModule.forFeature([Book]),
-        JwtModule.register({
+        TypeOrmModule.forFeature([Book]), // Importa el módulo TypeOrmModule y registra la entidad Book para su uso en el módulo
+        JwtModule.register({ // Importa el módulo JwtModule y registra la configuración del token JWT
             secret: jwtConstants.secret,
             signOptions: { expiresIn: '60s' },
         }),
@@ -17,4 +17,4 @@ import { jwtConstants } from '../auth/constants';
     controllers: [BooksController],
     providers: [BooksService],
 })
-export class BookModule {}
+export class BookModule {} // Exporta la clase BookModule que representa el módulo de libros de la aplicación

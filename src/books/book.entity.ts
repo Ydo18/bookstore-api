@@ -1,16 +1,16 @@
 import {Entity, Column, PrimaryGeneratedColumn} from 'typeorm';
 
-@Entity()
+@Entity() // Decorador para marcar la clase como una entidad de la base de datos
 export class Book {
-    @PrimaryGeneratedColumn()
-    id: number;
+    @PrimaryGeneratedColumn() // Decorador para definir una columna de clave primaria generada automáticamente
+    id: number; // Identificador unico del libro
 
-    @Column()
-    titulo: string;
+    @Column() // Decorador para definir una columna de base de datos
+    titulo: string; // titulo del libro
 
-    @Column()
-    autor: string;
+    @Column() // Decorador para definir una columna de base de datos
+    autor: string; // autor del libro
 
-    @Column()
-    publicacion: number;
+    @Column() // Decorador para definir una columna de base de datos
+    publicacion: number; // publicacion del libro
 }
