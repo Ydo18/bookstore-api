@@ -6,7 +6,7 @@
 
 ## Descripción del proyecto y endpoints
 
-Es un CRUD de una colección de libros que se conecta a la BD de postgres y usa JWT para la autenticación ejecuón de los endpoints establecidos
+Es un CRUD de una colección de libros que se conecta a la BD de postgres y usa JWT para la autenticación ejecución de los endpoints establecidos
 
 ### Endpoint: /libros
 Descripción: Obtiene todos los libros disponibles.
