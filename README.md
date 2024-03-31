@@ -1,73 +1,61 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
+# API - Crud Libreria
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+## Herramientas y tecnologias
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+- NestJS + TypeORM + Postgres
 
-## Description
+## Descripción del proyecto y endpoints
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+Es un CRUD de una colección de libros que se conecta a la BD de postgres y usa JWT para la autenticación ejecución de los endpoints establecidos
 
-## Installation
+### Endpoint: /libros
+Método: GET
+Descripción: Obtiene todos los libros disponibles.
+Formato de respuesta: Un array de objetos Book.
+Códigos de Estado:
+200 OK: Se devuelve la lista de libros correctamente.
+401 Unauthorized: El usuario no está autenticado.
 
-```bash
-$ npm install
-```
+Método: POST
+Descripción: Crea un nuevo libro.
+Formato de Solicitud: Objeto Book con los detalles del nuevo libro.
+Formato de Respuesta: El libro recién creado.
+Códigos de Estado:
+201 Created: El libro fue creado correctamente.
+400 Bad Request: La solicitud está mal formada o faltan datos.
+401 Unauthorized: El usuario no está autenticado.
 
-## Running the app
+### Endpoint: /libros/:id
+Método: GET
+Descripción: Obtiene un libro específico por su ID.
+Parámetros:
+* id: El ID único del libro que se desea obtener.
+Formato de Respuesta: Un objeto Book.
+Códigos de Estado:
+200 OK: Se devuelve el libro correctamente.
+404 Not Found: El libro con el ID especificado no fue encontrado.
+401 Unauthorized: El usuario no está autenticado.
 
-```bash
-# development
-$ npm run start
+Método: PUT
+Descripción: Actualiza un libro existente.
+Parámetros de Ruta:
+* id: El ID único del libro que se desea actualizar.
+* Objeto Book con los datos actualizados.
+Formato de Respuesta: El libro actualizado.
+Códigos de Estado:
+200 OK: El libro fue actualizado correctamente.
+404 Not Found: El libro con el ID especificado no fue encontrado.
+401 Unauthorized: El usuario no está autenticado.
 
-# watch mode
-$ npm run start:dev
+Método: DELETE
+Descripción: Elimina un libro existente por su ID.
+Parámetros de Ruta:
+id: El ID único del libro que se desea eliminar.
+Formato de Respuesta: Ninguno.
+Códigos de Estado:
+204 No Content: El libro fue eliminado correctamente.
+404 Not Found: El libro con el ID especificado no fue encontrado.
+401 Unauthorized: El usuario no está autenticado.
 
-# production mode
-$ npm run start:prod
-```
-
-## Test
-
-```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
-```
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
+## A tener en cuenta
+De ser necesario en la carpeta BD se encuentra el sql para la creación de la BD y tabla "book" con 3 libros previamente creados
