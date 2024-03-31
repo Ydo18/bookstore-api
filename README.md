@@ -58,4 +58,6 @@ Códigos de Estado:
 401 Unauthorized: El usuario no está autenticado.
 
 ## A tener en cuenta
-De ser necesario en la carpeta BD se encuentra el sql para la creación de la BD y tabla "book" con 3 libros previamente creados
+
+- De ser necesario en la carpeta BD se encuentra el sql para la creación de la BD y tabla "book" con 3 libros previamente creados
+- Se deja token (JWT) por defecto, si se realizan las pruebas desde postman se debe incluir en el Authorization: Algorithm HS256 y en Secret prueba
