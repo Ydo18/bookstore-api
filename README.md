@@ -19,6 +19,11 @@ Códigos de Estado:
 Método: POST
 Descripción: Crea un nuevo libro.
 Formato de Solicitud: Objeto Book con los detalles del nuevo libro.
+{
+    "titulo": String,
+    "autor": String,
+    "publicacion": Integer
+}
 Formato de Respuesta: El libro recién creado.
 Códigos de Estado:
 201 Created: El libro fue creado correctamente.
